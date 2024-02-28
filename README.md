@@ -33,7 +33,7 @@ git clone https://github.com/Tenrai-chi/test_repo.git
 ```bash
 cd store
 ```
-Измените файл .env.docker. В параметре STRIPE_SECRET_KEY_TEST установите собственный секретный ключ Stripe. Для этого необходимо зарегистрироваться на этом сервисе и зайти [сюда](https://dashboard.stripe.com/test/apikeys)
+Измените файл .env.docker. В параметре STRIPE_SECRET_KEY_TEST установите собственный секретный ключ Stripe. Для этого необходимо зарегистрироваться на этом сервисе и зайти [сюда](https://dashboard.stripe.com/test/apikeys).
 Теперь вы можете создать образ. Вместо docker_test_store можете указать свое собственное имя образа.
 ```bash
 docker build . --tag docker_test_store
