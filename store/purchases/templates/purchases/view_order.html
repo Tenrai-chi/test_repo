@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ</title>
+</head>
+<body>
+    {% for item in items_in_order %}
+    <p>{{ item.item.name }}</p>
+    <p>Цена: {{ item.item.price }}</p>
+    <p>Количество: {{ item.quantity }}</p>
+    ___________________________
+    {% endfor %}
+<p>Итого: {{ order_price }}</p>
+<p><a href="{% url 'buy_order' %}">BUY</a></p>
+</body>
+</html>

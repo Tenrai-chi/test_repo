@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Товары</title>
+</head>
+<body>
+<h2>Все товары</h2>
+<div class="container">
+    <p><a href="{% url 'view_order' %}">Корзина</a></p>
+    {% for item in items %}
+        <li><a href="{% url 'item_info' item_id=item.id %}">{{ item.name }}</a></li><br>
+    {% endfor %}
+</div>
+</body>
+</html>
