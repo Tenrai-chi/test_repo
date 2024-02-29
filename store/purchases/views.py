@@ -4,6 +4,7 @@ from django.conf import settings
 from django.db.models import F
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.db.models import Sum
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Item, Order, OrderItem
@@ -109,10 +110,7 @@ def view_order(request):
     order = order = Order.objects.filter(session_id=session_key, paid=False).last()
     if order:
         items_in_order = OrderItem.objects.filter(order=order)
-        #order_price = OrderItem.objects.filter(order=order).annotate(order_price=F('item__price')*F('quantity'))
-        order_price = 0
-        for item in items_in_order:
-            order_price += item.item.price * item.quantity
+        order_price = OrderItem.objects.annotate(order_price=F('item__price')*F('quantity')).filter(order=order).aggregate(Sum('order_price'))
 
         context = {'items_in_order': items_in_order,
                    'order_price': order_price}
