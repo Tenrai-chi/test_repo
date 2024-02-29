@@ -11,7 +11,7 @@
     <p>Количество: {{ item.quantity }}</p>
     ___________________________
     {% endfor %}
-<p>Итого: {{ order_price }}</p>
+<p>Итого: {{ order_price.order_price__sum }}</p>
 <p><a href="{% url 'buy_order' %}">BUY</a></p>
 </body>
 </html>
