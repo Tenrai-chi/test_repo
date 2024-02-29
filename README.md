@@ -29,7 +29,7 @@ docker version
 ```bash
 git clone https://github.com/Tenrai-chi/test_repo.git
 ```
-Перейдите в папку проекта Store
+Перейдите в папку Store внутри проекта
 ```bash
 cd store
 ```
